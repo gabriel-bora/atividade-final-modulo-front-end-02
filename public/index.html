@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Recados</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+          rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
+          crossorigin="anonymous">
+</head>
+
+<body class="fundo" id="background">
+    <div class="toggleWrapper mt-5">
+        <input type="checkbox" class="dn" id="dn">
+        <label for="dn" class="toggle">
+            <span class="toggle__handler">
+                <span class="crater crater--1"></span>
+                <span class="crater crater--2"></span>
+                <span class="crater crater--3"></span>
+            </span>
+            <span class="star star--1"></span>
+            <span class="star star--2"></span>
+            <span class="star star--3"></span>
+            <span class="star star--4"></span>
+            <span class="star star--5"></span>
+            <span class="star star--6"></span>
+        </label>
+    </div>
+    
+    <div class="main">
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup d-flex justify-content-center">
+            <form>
+                <div class="d-flex justify-content-center">
+                    <label for="chk" aria-hidden="true">Login</label>
+                </div>
+                <div class="login__row input-group pt-0 d-flex justify-content-center">
+                    <span class="input-group-text shadow basic-addon1" id="spanLoginUser">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <input type="email" class="login__input shadow" placeholder="E-mail"/>
+                </div>
+                <div class="login__row input-group pt-0 mt-3 d-flex justify-content-center">
+                    <span class="input-group-text shadow basic-addon1" id="spanLoginPass">
+                        <i class="fa-solid fa-lock"></i>
+                    </span>
+                    <input type="password" class="login__input shadow" placeholder="Senha"/>
+                </div>
+                <button class="login__submit mt-5">ENTRAR</button>
+            </form>
+        </div>
+
+        <div class="login d-flex justify-content-center" id="cadastro">
+            <form>
+                <div class="d-flex justify-content-center">
+                    <label for="chk" aria-hidden="true">Criar conta</label>
+                </div>
+                <div class="login__row input-group pt-0 d-flex justify-content-center">
+                    <span class="input-group-text shadow basic-addon2" id="spanCadastroNome">
+                        <i class="fa-regular fa-user"></i>
+                    </span>
+                    <input type="text" class="login__input shadow" placeholder="Nome"/>
+                </div>
+                <div class="login__row input-group pt-0 mt-3 d-flex justify-content-center">
+                    <span class="input-group-text shadow basic-addon2" id="spanCadastroUser">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <input type="email" class="login__input shadow" placeholder="E-mail"/>
+                </div>
+                <div class="login__row input-group pt-0 mt-3 d-flex justify-content-center">
+                    <span class="input-group-text shadow basic-addon2" id="spanCadastroPass">
+                        <i class="fa-solid fa-lock"></i>
+                    </span>
+                    <input type="password" class="login__input shadow" placeholder="Senha"/>
+                </div>
+                <button class="login__submit mt-5">CADASTRAR</button>
+            </form>
+        </div>
+	</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b6008d9d9d.js" crossorigin="anonymous"></script>
+    <script src="./dist/index.js"></script>
+</body>
+</html>
