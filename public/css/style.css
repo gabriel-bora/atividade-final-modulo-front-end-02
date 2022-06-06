@@ -518,6 +518,9 @@ th {
     border-top: 0.5px solid #051026!important;
     border-bottom: 0.5px solid #051026!important;
     height: 4vh;
+    position: sticky; 
+    top: calc(0.5rem + 1vh);
+    background-color: rgba(223, 247, 247, 1);
 }
 
 tr {
@@ -531,7 +534,7 @@ tr:nth-child(even) {background-color: rgba(223, 247, 247, 0.4);}
     background-color: rgba(5, 16, 38, 0.6)!important;
 }
 
-tr:hover {background-color: rgba(60, 99, 146, 0.5)!important;}
+tbody tr:hover {background-color: rgba(60, 99, 146, 0.5)!important;}
 
 .coluna1 {width: 2vw;}
 
