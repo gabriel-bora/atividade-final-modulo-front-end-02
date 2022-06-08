@@ -6,8 +6,9 @@ let inputDescricao = document.querySelector('#inputDescricao');
 let inputDetalhamento = document.querySelector('#inputDetalhamento');
 let spanDescricao = document.querySelector('#spanDescricao');
 let spanDetalhamento = document.querySelector('#spanDetalhamento');
-let tabelaRecados = document.querySelector('#tabelaRecados');
-let linhasTabela = document.querySelectorAll('tr:nth-child(even)');
+let botaoAccordion = document.querySelectorAll('.botaoAccordion');
+let bodyAccordion = document.querySelectorAll('.bodyAccordion');
+let botaoSair = document.querySelector('#botaoSair');
 toggleHome.addEventListener('click', toggleTemaHome);
 function toggleTemaHome() {
     fundoHome.classList.toggle('darkMode');
@@ -16,10 +17,15 @@ function toggleTemaHome() {
     inputDetalhamento.classList.toggle('inputsDarkMode');
     spanDescricao.classList.toggle('addonDarkMode');
     spanDetalhamento.classList.toggle('addonDarkMode');
-    tabelaRecados.classList.toggle('recadosDarkMode');
-    for (const elemento of linhasTabela) {
-        elemento.classList.toggle('linhasDarkMode');
+    for (const elemento of botaoAccordion) {
+        elemento.classList.toggle('accordion-dark-mode');
     }
+    ;
+    for (const elemento of bodyAccordion) {
+        elemento.classList.toggle('accordion-dark-mode');
+    }
+    ;
+    botaoSair.classList.toggle('botaoSairDarkMode');
     if (toggleHome.checked) {
         localStorage.setItem('DarkMode', 'true');
     }
@@ -27,8 +33,12 @@ function toggleTemaHome() {
         localStorage.setItem('DarkMode', 'false');
     }
 }
+;
 let darkModeHome = localStorage.getItem('DarkMode');
 if (darkModeHome === 'true') {
     toggleHome.checked = true;
     toggleTemaHome();
 }
+;
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));

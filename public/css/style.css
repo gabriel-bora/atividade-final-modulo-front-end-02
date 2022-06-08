@@ -21,10 +21,6 @@
     background-image: url(../images/fundo-index-escuro.jpg);
 }
 
-.container-fluid {
-    min-height: 100vh;
-}
-
 .main{
 	width: 21rem;
 	height: 30rem;
@@ -110,6 +106,16 @@ input:focus {outline: none;}
     color: #0C70F2;
 }
 
+.loginInputDarkMode {
+    border-bottom: 1px solid #DFF7F7!important;
+    border-right: 1px solid #DFF7F7!important;
+    color: #DFF7F7!important;
+}
+
+.loginInputDarkMode::placeholder {
+    color: #DFF7F7!important;
+}
+
 .input-group-text {
     border: none!important;
     background-color: transparent!important;
@@ -117,12 +123,12 @@ input:focus {outline: none;}
 
 .basic-addon1 {
     border-bottom: 1px solid #0C70F2!important;
-    color: #DFF7F7!important;
+    color: #0C70F2!important;
 }
 
-.basic-addon2 {
-    border-bottom: 1px solid #0C70F2!important;
-    color: #0C70F2!important;
+.basic-addon1-dark-mode {
+    border-bottom: 1px solid #DFF7F7!important;
+    color: #DFF7F7!important;
 }
 
 .login__submit {
@@ -391,8 +397,8 @@ input:checked + .toggle .star--6 {
 }
 
 .main-2 {
-	width: 97.5vw;
-	height: 80vh;
+	width: 97vw;
+	height: 72vh;
 	overflow-x: hidden;
     overflow-y: auto;
 	background: rgba(223, 247, 247, 0.9);
@@ -425,11 +431,18 @@ input:checked + .toggle .star--6 {
 
 .basic-addon3 {
     height: 100%;
-    width: 20%;
-    font-size: 1vw!important;
+    font-size: 0.8rem!important;
     border-bottom: 1px solid #0C70F2!important;
     color: #0C70F2!important;
     background-color: rgba(223, 247, 247, 0.6)!important;
+}
+
+.span-descricao {
+    width: 30%;
+}
+
+.span-detalhamento {
+    width: 40%;
 }
 
 .addonDarkMode {
@@ -439,7 +452,7 @@ input:checked + .toggle .star--6 {
 }
 
 .descricao {
-    width: 80%;
+    width: 70%;
     background-color: rgba(223, 247, 247, 0.6);
 }
 
@@ -451,20 +464,21 @@ input:checked + .toggle .star--6 {
 }
 
 .detalhamento {
-    width: 80%;
+    width: 60%;
     background-color: rgba(223, 247, 247, 0.6);
 }
 
 .botaoSalvar {
-    height: 5vh;
-    font-size: 1vw;
+    height: 2rem;
+    font-size: 0.8rem;
     cursor: pointer;
     text-decoration: none;
     position: absolute;
     border: none;
     font-weight: 700;
     color: #DFF7F7;
-    width: 20vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
     margin-left: -1vw!important;
     text-align: center;
     background: linear-gradient(90deg,#0C70F2,#3C6392,#08A63F,#0C70F2);
@@ -495,57 +509,50 @@ input:checked + .toggle .star--6 {
     background: linear-gradient(32deg,#0C70F2,#3C6392,#08A63F,#0C70F2);
 }
 
-.tabela {
-    min-height: 75vh;
+.divBotaoSair {
+    display: flex;
+    justify-content: end;
 }
 
-table.recados {
-    border-collapse: collapse;
-    width: 97vw;
-    margin-top: 1vh;
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 1.2vw;
-    color: #051026;
+.botaoSair {
+    position: fixed;
+    border-radius: 100%;
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: radial-gradient(#0CF25D 0%, #08A63F 50%, #06732C 100%);
+    color: #DFF7F7;
+    bottom: 2vh;
 }
 
-.recadosDarkMode {
+.botaoSairDarkMode {
+    background: radial-gradient(#E6C610 0%, #D9961A 50%, #BF8417 100%)!important;
+}
+
+.accordion-button, .accordion-body {
+    padding-top: 0.5rem!important;
+    padding-bottom: 0.5rem!important;
+    background-color: #DFF7F7!important;
+    color: #051026!important;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #DFF7F7!important;
+    background-color: #3C6392!important;
+}
+
+.accordion:last-child > .accordion-item:last-child > .accordion-collapse > .accordion-body {
+    border-bottom-left-radius: 0.375rem!important;
+    border-bottom-right-radius: 0.375rem!important;
+}
+
+.accordion-dark-mode {
+    background-color: #051026!important;
     color: #DFF7F7!important;
 }
 
-th {
-    text-align: left;
-    border-top: 0.5px solid #051026!important;
-    border-bottom: 0.5px solid #051026!important;
-    height: 4vh;
-    position: sticky; 
-    top: calc(0.5rem + 1vh);
-    background-color: rgba(223, 247, 247, 1);
+.btn-warning {
+    --bs-btn-color: #fff!important;
+    --bs-btn-hover-color: #fff!important;
+    --bs-btn-active-color: #fff!important;
 }
-
-tr {
-    height: 4vh;
-    background-color: transparent;
-}
-
-tr:nth-child(even) {background-color: rgba(223, 247, 247, 0.4);}
-
-.linhasDarkMode {
-    background-color: rgba(5, 16, 38, 0.6)!important;
-}
-
-tbody tr:hover {background-color: rgba(60, 99, 146, 0.5)!important;}
-
-.coluna1 {width: 2vw;}
-
-.coluna2 {
-    width: 24.5vw;
-    word-break: break-word;
-}
-
-.coluna3 {
-    width: 48vw;
-    word-break: break-word;
-}
-
-.coluna4 {width: 14vw;}

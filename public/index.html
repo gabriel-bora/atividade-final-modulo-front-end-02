@@ -37,7 +37,7 @@
 		<input type="checkbox" id="chk" aria-hidden="true">
 
         <div class="signup d-flex justify-content-center">
-            <form>
+            <form id="formLogin">
                 <div class="d-flex justify-content-center">
                     <label for="chk" aria-hidden="true">Login</label>
                 </div>
@@ -45,42 +45,48 @@
                     <span class="input-group-text shadow basic-addon1" id="spanLoginUser">
                         <i class="fa-solid fa-user"></i>
                     </span>
-                    <input type="email" class="login__input shadow" placeholder="E-mail"/>
+                    <input type="email" class="login__input shadow" placeholder="E-mail" id="inputLoginUser"/>
                 </div>
                 <div class="login__row input-group pt-0 mt-3 d-flex justify-content-center">
                     <span class="input-group-text shadow basic-addon1" id="spanLoginPass">
                         <i class="fa-solid fa-lock"></i>
                     </span>
-                    <input type="password" class="login__input shadow" placeholder="Senha"/>
+                    <input type="password" class="login__input shadow" placeholder="Senha" id="inputLoginPass"/>
                 </div>
                 <button class="login__submit mt-5">ENTRAR</button>
             </form>
         </div>
 
         <div class="login d-flex justify-content-center" id="cadastro">
-            <form>
+            <form id="formCadastro">
                 <div class="d-flex justify-content-center">
                     <label for="chk" aria-hidden="true">Criar conta</label>
                 </div>
                 <div class="login__row input-group pt-0 d-flex justify-content-center">
-                    <span class="input-group-text shadow basic-addon2" id="spanCadastroNome">
+                    <span class="input-group-text shadow basic-addon1" id="spanCadastroNome">
                         <i class="fa-regular fa-user"></i>
                     </span>
-                    <input type="text" class="login__input shadow" placeholder="Nome"/>
+                    <input type="text" class="login__input shadow" placeholder="Nome" id="inputCadastroNome" 
+                           data-bs-toggle="popover" data-bs-container="body" data-bs-trigger="focus" 
+                           data-bs-placement="top" data-bs-content="Mínimo de 3 caracteres"/>
                 </div>
                 <div class="login__row input-group pt-0 mt-3 d-flex justify-content-center">
-                    <span class="input-group-text shadow basic-addon2" id="spanCadastroUser">
+                    <span class="input-group-text shadow basic-addon1" id="spanCadastroUser">
                         <i class="fa-solid fa-user"></i>
                     </span>
-                    <input type="email" class="login__input shadow" placeholder="E-mail"/>
+                    <input type="email" class="login__input shadow" placeholder="E-mail" id="inputCadastroUser"
+                           data-bs-toggle="popover" data-bs-container="body" data-bs-trigger="focus" 
+                           data-bs-placement="top" data-bs-content="Mínimo de 10 caracteres"/>
                 </div>
                 <div class="login__row input-group pt-0 mt-3 d-flex justify-content-center">
-                    <span class="input-group-text shadow basic-addon2" id="spanCadastroPass">
+                    <span class="input-group-text shadow basic-addon1" id="spanCadastroPass">
                         <i class="fa-solid fa-lock"></i>
                     </span>
-                    <input type="password" class="login__input shadow" placeholder="Senha"/>
+                    <input type="password" class="login__input shadow" placeholder="Senha" id="inputCadastroPass"
+                           data-bs-toggle="popover" data-bs-container="body" data-bs-trigger="focus" 
+                           data-bs-placement="top" data-bs-content="Deve conter: minúscula, maiúscula, número e caracter especial"/>
                 </div>
-                <button class="login__submit mt-5">CADASTRAR</button>
+                <button type="submit" class="login__submit mt-5">CADASTRAR</button>
             </form>
         </div>
 	</div>
