@@ -532,23 +532,19 @@ input:checked + .toggle .star--6 {
 .accordion-button, .accordion-body {
     padding-top: 0.5rem!important;
     padding-bottom: 0.5rem!important;
-    background-color: #DFF7F7!important;
-    color: #051026!important;
+    background-color: transparent!important;
+    color: #051026 !important;
+    border-bottom: 1px solid rgba(60, 99, 146, 0.6)!important;
+}
+
+.accordion-dark-mode {
+    color: #DFF7F7!important;
 }
 
 .accordion-button:not(.collapsed) {
     color: #DFF7F7!important;
     background-color: #3C6392!important;
-}
-
-.accordion:last-child > .accordion-item:last-child > .accordion-collapse > .accordion-body {
-    border-bottom-left-radius: 0.375rem!important;
-    border-bottom-right-radius: 0.375rem!important;
-}
-
-.accordion-dark-mode {
-    background-color: #051026!important;
-    color: #DFF7F7!important;
+    border-bottom: none !important;
 }
 
 .btn-warning {

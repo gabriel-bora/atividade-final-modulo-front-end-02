@@ -1,4 +1,11 @@
 "use strict";
+// ------------------------- LÓGICA PARA VERIFICAÇÃO DE LOGIN ----------------------------
+let login = window.sessionStorage.getItem('login') || '';
+if (login === 'true') {
+    alert('Você já está logado!');
+    window.location.href = './home.html';
+}
+;
 // --------------------------- DECLARAÇÃO DE DADOS GLOBAIS -----------------------------
 // VARIÁVEIS
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
@@ -60,13 +67,6 @@ let darkMode = localStorage.getItem('DarkMode');
 if (darkMode === 'true') {
     toggle.checked = true;
     toggleTema();
-}
-;
-// ------------------------- LÓGICA PARA VERIFICAÇÃO DE LOGIN ----------------------------
-let login = window.sessionStorage.getItem('login') || '';
-if (login === 'true') {
-    alert('Você já está logado!');
-    window.location.href = './home.html';
 }
 ;
 // --------------------------- LÓGICA PARA EXECUÇÃO DE LOGIN ------------------------------

@@ -1,9 +1,17 @@
+// ------------------------- LÓGICA PARA VERIFICAÇÃO DE LOGIN ----------------------------
+let login :string = window.sessionStorage.getItem('login') || '';
+
+if(login === 'true'){
+    alert('Você já está logado!');
+    window.location.href = './home.html';
+};
+
 // --------------------------- DECLARAÇÃO DE DADOS GLOBAIS -----------------------------
 // VARIÁVEIS
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
 interface Recados {
-    indice :number;
+    indice :string;
     descricao :string;
     detalhamento :string
 };
@@ -70,14 +78,6 @@ let darkMode = localStorage.getItem('DarkMode');
 if(darkMode === 'true') {
     toggle.checked = true;
     toggleTema();
-};
-
-// ------------------------- LÓGICA PARA VERIFICAÇÃO DE LOGIN ----------------------------
-let login :string = window.sessionStorage.getItem('login') || '';
-
-if(login === 'true'){
-    alert('Você já está logado!');
-    window.location.href = './home.html';
 };
 
 // --------------------------- LÓGICA PARA EXECUÇÃO DE LOGIN ------------------------------
