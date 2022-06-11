@@ -2,8 +2,13 @@
 // ------------------------- LÓGICA PARA VERIFICAÇÃO DE LOGIN ----------------------------
 let loginHome = window.sessionStorage.getItem('login') || '';
 if (loginHome !== 'true') {
-    alert('Você precisa estar logado para acessar essa página');
-    window.location.href = './index.html';
+    let toastLoginRecados = document.querySelector('#toastLoginRecados');
+    const toast = new bootstrap.Toast(toastLoginRecados);
+    toast.show();
+    let toastLoginRecadosClose = document.querySelector('#toastLoginRecadosClose');
+    toastLoginRecadosClose.addEventListener('click', () => {
+        window.location.href = './index.html';
+    });
 }
 ;
 ;
@@ -36,16 +41,15 @@ formRecados.addEventListener('submit', criarRecado);
 botaoSair.addEventListener('click', logOut);
 // DECLARAÇÃO DE FUNÇÕES
 function logOut() {
-    let confirmaSair = window.confirm('Confirma a saída do sistema?');
-    if (confirmaSair) {
+    let toastLogOut = document.querySelector('#toastLogOut');
+    const toast = new bootstrap.Toast(toastLogOut);
+    toast.show();
+    let toastLogOutSim = document.querySelector('#toastLogOutSim');
+    toastLogOutSim.addEventListener('click', () => {
         window.sessionStorage.removeItem('login');
         window.sessionStorage.removeItem('usuario');
         window.location.href = './index.html';
-        return;
-    }
-    else {
-        return;
-    }
+    });
 }
 ;
 function criarRecado(e) {
@@ -106,16 +110,15 @@ function carregarConteudo(listaRecados) {
 }
 ;
 function apagarRecado(indice) {
-    let confirmaApagar = window.confirm('Quer apagar o recado?');
-    if (confirmaApagar) {
+    let toastApagarRecado = document.querySelector('#toastApagarRecado');
+    const toast = new bootstrap.Toast(toastApagarRecado);
+    toast.show();
+    let toastApagarRecadoSim = document.querySelector('#toastApagarRecadoSim');
+    toastApagarRecadoSim.addEventListener('click', () => {
         listaRecados.splice(Number(indice), 1);
         salvarNoStorageHome(listaUsuariosHome);
         window.location.reload();
-        return;
-    }
-    else {
-        return;
-    }
+    });
 }
 ;
 function editarRecado(indice) {

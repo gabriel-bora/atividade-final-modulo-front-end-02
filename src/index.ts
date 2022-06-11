@@ -1,9 +1,17 @@
 // ------------------------- LÓGICA PARA VERIFICAÇÃO DE LOGIN ----------------------------
 let login :string = window.sessionStorage.getItem('login') || '';
+let emailLogado :string = window.sessionStorage.getItem('usuario') || '';
 
 if(login === 'true'){
-    alert('Você já está logado!');
-    window.location.href = './home.html';
+    let spanNomeLogado = document.querySelector('#spanNomeLogado') as HTMLSpanElement;
+    spanNomeLogado.innerText = emailLogado;
+    let toastLogin = document.querySelector('#toastLogin') as HTMLDivElement;
+    const toast = new bootstrap.Toast(toastLogin);
+    toast.show();
+    let toastLoginClose = document.querySelector('#toastLoginClose') as HTMLButtonElement;
+    toastLoginClose.addEventListener('click', () => {
+        window.location.href = './home.html';
+    });
 };
 
 // --------------------------- DECLARAÇÃO DE DADOS GLOBAIS -----------------------------
@@ -101,9 +109,14 @@ function entrar(e: any): void{
     });
 
     if (validaEmail === false){
-        alert('Você não está cadastrado. Indo para o cadastro.');
-        formLogin.reset();
-        checkLoginRegistro.checked = true;
+        let toastEmailNovo = document.querySelector('#toastEmailNovo') as HTMLDivElement;
+        const toast = new bootstrap.Toast(toastEmailNovo);
+        toast.show();
+        let toastEmailNovoClose = document.querySelector('#toastEmailNovoClose') as HTMLButtonElement;
+        toastEmailNovoClose.addEventListener('click', () => {
+            formLogin.reset();
+            checkLoginRegistro.checked = true;
+        });
         return;
     }else{
         let validacao = listaUsuarios.some((valor :Usuario) => {
@@ -116,9 +129,14 @@ function entrar(e: any): void{
             window.location.href = './home.html';
             return;
         }else {
-            alert('E-mail ou senha incorretos.');
-            formLogin.reset();
-            inputLoginUser.focus();
+            let toastEmailIncorreto = document.querySelector('#toastEmailIncorreto') as HTMLDivElement;
+            const toast = new bootstrap.Toast(toastEmailIncorreto);
+            toast.show();
+            let toastEmailIncorretoClose = document.querySelector('#toastEmailIncorretoClose') as HTMLButtonElement;
+            toastEmailIncorretoClose.addEventListener('click', () => {
+                formLogin.reset();
+                inputLoginUser.focus();
+            });
             return;
         }
     }
@@ -205,10 +223,14 @@ function verificaCampos(e: any) :void {
     listaUsuarios = pegarNoStorage();
 
     if(inputCadastroUser.value === '' || inputCadastroPass.value === '' || inputCadastroNome.value === ''){
-        alert('Algo deu errado! Por favor verifique se você preencheu todos os campos.');
+        let toastCamposIncorretos = document.querySelector('#toastCamposIncorretos') as HTMLDivElement;
+        const toast = new bootstrap.Toast(toastCamposIncorretos);
+        toast.show();
         return;
     }else if(!validUser || !validPass || !validNome){
-        alert('Campos incorretos! Por favor verifique se você preencheu todos os campos corretamente.');
+        let toastCamposIncorretos = document.querySelector('#toastCamposIncorretos') as HTMLDivElement;
+        const toast = new bootstrap.Toast(toastCamposIncorretos);
+        toast.show();
         return;
     }else {        
         if(listaUsuarios){
@@ -217,34 +239,36 @@ function verificaCampos(e: any) :void {
             });
 
             if(validaDuplicidade){
-                alert('E-mail já tinha sido cadastrado. Redirecionando para a página de login.');
-                retornaEstiloForm();
-                checkLoginRegistro.checked = false;
-                return;
-            }else{
-                alert('Conta criada com sucesso!');
-                criaUsuario();
-                let confirma = window.confirm('Deseja ir para a página de login?')
-                if(confirma){
+                let toastDuplicidade = document.querySelector('#toastDuplicidade') as HTMLDivElement;
+                const toast = new bootstrap.Toast(toastDuplicidade);
+                toast.show();
+                let toastDuplicidadeClose = document.querySelector('#toastDuplicidadeClose') as HTMLButtonElement;
+                toastDuplicidadeClose.addEventListener('click', () => {
                     retornaEstiloForm();
                     checkLoginRegistro.checked = false;
-                    return;
-                }else{
-                    retornaEstiloForm();
-                    return;
-                }
+                })
+                return;
+            }else{
+                criaUsuario();
+                let toastCadastro = document.querySelector('#toastCadastro') as HTMLDivElement;
+                const toast = new bootstrap.Toast(toastCadastro);
+                toast.show();
+                retornaEstiloForm();
+                let toastCadastroSim = document.querySelector('#toastCadastroSim') as HTMLButtonElement;
+                toastCadastroSim.addEventListener('click', () => {
+                    checkLoginRegistro.checked = false;
+                })
             }
         }else{
-            alert('Conta criada com sucesso!');
             criaUsuario();
-            let confirma = window.confirm('Deseja ir para a página de login?');
-            if(confirma){
-                retornaEstiloForm();
+            let toastCadastro = document.querySelector('#toastCadastro') as HTMLDivElement;
+            const toast = new bootstrap.Toast(toastCadastro);
+            toast.show();
+            retornaEstiloForm();
+            let toastCadastroSim = document.querySelector('#toastCadastroSim') as HTMLButtonElement;
+            toastCadastroSim.addEventListener('click', () => {
                 checkLoginRegistro.checked = false;
-            }else{
-                retornaEstiloForm();
-                return;
-            }
+            })
         }
     }
 };

@@ -91,6 +91,62 @@
         </div>
 	</div>
 
+    <div class="toast text-bg-primary" role="alert" aria-live="assertive" aria-atomic="true" id="toastCadastro" data-bs-autohide="false">
+        <div class="toast-body">
+            <p>Conta criada com sucesso!</p>
+            <p>Deseja ir para a página de login?</p>
+            <div class="mt-2 pt-2 border-top">
+                <button type="button" class="btn btn-sm bg-warning" data-bs-dismiss="toast" id="toastCadastroSim">Sim</button>
+                <button type="button" class="btn btn-sm bg-info" data-bs-dismiss="toast">Não</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" id="toastDuplicidade">
+        <div class="d-flex">
+            <div class="toast-body">
+                E-mail já tinha sido cadastrado. Redirecionando para a página de login.
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close" id="toastDuplicidadeClose"></button>
+        </div>
+    </div>
+
+    <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" id="toastCamposIncorretos">
+        <div class="d-flex">
+            <div class="toast-body">
+                Campos incorretos! Por favor verifique se você preencheu todos os campos corretamente.
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" id="toastEmailNovo">
+        <div class="d-flex">
+            <div class="toast-body">
+                Você não está cadastrado. Indo para o cadastro.
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close" id="toastEmailNovoClose"></button>
+        </div>
+    </div>
+
+    <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" id="toastEmailIncorreto">
+        <div class="d-flex">
+            <div class="toast-body">
+                Senha incorreta
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"  id="toastEmailIncorretoClose"></button>
+        </div>
+    </div>
+
+    <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" id="toastLogin">
+        <div class="d-flex">
+            <div class="toast-body">
+                Você já está logado como <span id="spanNomeLogado"></span>!
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"  id="toastLoginClose"></button>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
             crossorigin="anonymous"></script>

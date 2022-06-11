@@ -556,3 +556,21 @@ input:checked + .toggle .star--6 {
     --bs-btn-hover-color: #fff!important;
     --bs-btn-active-color: #fff!important;
 }
+
+.toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#toastLoginRecados {
+    width: 80vw !important;
+    height: 70vh !important;
+    font-size: 3rem;
+}
+
+#toastLogOut {
+    top: 84% !important;
+    left: 84% !important;
+}

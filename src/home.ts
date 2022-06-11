@@ -2,8 +2,13 @@
 let loginHome :string = window.sessionStorage.getItem('login') || '';
 
 if(loginHome !== 'true'){
-    alert('Você precisa estar logado para acessar essa página')
-    window.location.href = './index.html';
+    let toastLoginRecados = document.querySelector('#toastLoginRecados') as HTMLDivElement;
+    const toast = new bootstrap.Toast(toastLoginRecados);
+    toast.show();
+    let toastLoginRecadosClose = document.querySelector('#toastLoginRecadosClose') as HTMLButtonElement;
+    toastLoginRecadosClose.addEventListener('click', () => {
+        window.location.href = './index.html';
+    });
 };
 
 // --------------------------- DECLARAÇÃO DE DADOS GLOBAIS --------------------------------
@@ -49,15 +54,15 @@ botaoSair.addEventListener('click', logOut);
 
 // DECLARAÇÃO DE FUNÇÕES
 function logOut() :void {
-    let confirmaSair = window.confirm('Confirma a saída do sistema?');
-        if(confirmaSair){
-            window.sessionStorage.removeItem('login');
-            window.sessionStorage.removeItem('usuario');
-            window.location.href = './index.html';
-            return;
-        }else {
-            return;
-        }
+    let toastLogOut = document.querySelector('#toastLogOut') as HTMLDivElement;
+    const toast = new bootstrap.Toast(toastLogOut);
+    toast.show();
+    let toastLogOutSim = document.querySelector('#toastLogOutSim') as HTMLButtonElement;
+    toastLogOutSim.addEventListener('click', () => {
+        window.sessionStorage.removeItem('login');
+        window.sessionStorage.removeItem('usuario');
+        window.location.href = './index.html';
+    });
 };
 
 function criarRecado(e: any) :void {
@@ -127,15 +132,15 @@ function carregarConteudo(listaRecados :Recados[]) :void {
 };
 
 function apagarRecado(indice :string) :void {
-    let confirmaApagar = window.confirm('Quer apagar o recado?');
-        if(confirmaApagar){
-            listaRecados.splice(Number(indice), 1);
-            salvarNoStorageHome(listaUsuariosHome);
-            window.location.reload();
-            return;
-        }else{
-            return;
-        }
+    let toastApagarRecado = document.querySelector('#toastApagarRecado') as HTMLDivElement;
+    const toast = new bootstrap.Toast(toastApagarRecado);
+    toast.show();
+    let toastApagarRecadoSim = document.querySelector('#toastApagarRecadoSim') as HTMLButtonElement;
+    toastApagarRecadoSim.addEventListener('click', () => {
+        listaRecados.splice(Number(indice), 1);
+        salvarNoStorageHome(listaUsuariosHome);
+        window.location.reload();
+    });
 };
 
 function editarRecado(indice :string){
