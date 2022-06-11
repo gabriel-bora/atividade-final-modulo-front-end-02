@@ -218,6 +218,7 @@ function verificaCampos(e: any) :void {
 
             if(validaDuplicidade){
                 alert('E-mail já tinha sido cadastrado. Redirecionando para a página de login.');
+                retornaEstiloForm();
                 checkLoginRegistro.checked = false;
                 return;
             }else{

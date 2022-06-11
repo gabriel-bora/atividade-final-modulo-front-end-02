@@ -205,6 +205,7 @@ function verificaCampos(e) {
             });
             if (validaDuplicidade) {
                 alert('E-mail já tinha sido cadastrado. Redirecionando para a página de login.');
+                retornaEstiloForm();
                 checkLoginRegistro.checked = false;
                 return;
             }
