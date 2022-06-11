@@ -547,6 +547,10 @@ input:checked + .toggle .star--6 {
     border-bottom: none !important;
 }
 
+.accordion-button:focus {
+    box-shadow: none !important;
+}
+
 .btn-warning {
     --bs-btn-color: #fff!important;
     --bs-btn-hover-color: #fff!important;

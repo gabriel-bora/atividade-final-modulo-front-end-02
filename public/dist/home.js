@@ -105,9 +105,6 @@ function carregarConteudo(listaRecados) {
     }
 }
 ;
-// DECLARAÇÃO DOS TOOLTIPS
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 function apagarRecado(indice) {
     let confirmaApagar = window.confirm('Quer apagar o recado?');
     if (confirmaApagar) {
@@ -138,6 +135,9 @@ function editarRecado(indice) {
     });
 }
 ;
+// DECLARAÇÃO DOS TOOLTIPS
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 // ------------------------------- LÓGICA PARA TEMA ESCURO -------------------------------
 // DECLARAÇÃO DE VARIÁVEIS
 let toggleHome = document.querySelector('#dn-2');

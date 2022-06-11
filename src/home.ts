@@ -126,10 +126,6 @@ function carregarConteudo(listaRecados :Recados[]) :void {
     }
 };
 
-// DECLARAÇÃO DOS TOOLTIPS
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-
 function apagarRecado(indice :string) :void {
     let confirmaApagar = window.confirm('Quer apagar o recado?');
         if(confirmaApagar){
@@ -158,6 +154,10 @@ function editarRecado(indice :string){
         window.location.reload();
     })
 };
+
+// DECLARAÇÃO DOS TOOLTIPS
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
 // ------------------------------- LÓGICA PARA TEMA ESCURO -------------------------------
 // DECLARAÇÃO DE VARIÁVEIS
