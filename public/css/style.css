@@ -21,7 +21,7 @@
     background-image: url(../images/fundo-index-escuro.jpg);
 }
 
-.main{
+.main {
 	width: 21rem;
 	height: 30rem;
 	overflow: hidden;
@@ -30,17 +30,17 @@
 	box-shadow: 5px 20px 50px #000;
 }
 
-#chk{
+#chk {
 	display: none;
 }
 
-.signup{
+.signup {
 	position: relative;
 	width:100%;
 	height: 100%;
 }
 
-label{
+label {
 	color: #DFF7F7;
 	font-size: 2.3em;
 	justify-content: center;
@@ -51,7 +51,7 @@ label{
 	transition: .5s ease-in-out;
 }
 
-.login{
+.login {
 	height: 30rem;
 	border-radius: 60% / 10%;
     background: #DFF7F7;
@@ -63,25 +63,27 @@ label{
 	background: #051026;
 }
 
-.login label{
+.login label {
 	color: #0C70F2;
     margin-top: 1.5rem;
 	transform: scale(.6);
 }
 
-#chk:checked ~ .login{
+#chk:checked ~ .login {
 	transform: translateY(-25rem);
 }
 
-#chk:checked ~ .login label{
+#chk:checked ~ .login label {
 	transform: scale(1);	
 }
 
-#chk:checked ~ .signup label{
+#chk:checked ~ .signup label {
 	transform: scale(.6) translateY(-4rem);
 }
 
-input:focus {outline: none;}
+input:focus {
+    outline: none;
+}
 
 .login__row {
     height: 2rem;
@@ -107,28 +109,28 @@ input:focus {outline: none;}
 }
 
 .loginInputDarkMode {
-    border-bottom: 1px solid #DFF7F7!important;
-    border-right: 1px solid #DFF7F7!important;
-    color: #DFF7F7!important;
+    border-bottom: 1px solid #DFF7F7 !important;
+    border-right: 1px solid #DFF7F7 !important;
+    color: #DFF7F7 !important;
 }
 
 .loginInputDarkMode::placeholder {
-    color: #DFF7F7!important;
+    color: #DFF7F7 !important;
 }
 
 .input-group-text {
-    border: none!important;
-    background-color: transparent!important;
+    border: none !important;
+    background-color: transparent !important;
 }
 
 .basic-addon1 {
-    border-bottom: 1px solid #0C70F2!important;
-    color: #0C70F2!important;
+    border-bottom: 1px solid #0C70F2 !important;
+    color: #0C70F2 !important;
 }
 
 .basic-addon1-dark-mode {
-    border-bottom: 1px solid #DFF7F7!important;
-    color: #DFF7F7!important;
+    border-bottom: 1px solid #DFF7F7 !important;
+    color: #DFF7F7 !important;
 }
 
 .login__submit {
@@ -431,10 +433,10 @@ input:checked + .toggle .star--6 {
 
 .basic-addon3 {
     height: 100%;
-    font-size: 0.8rem!important;
-    border-bottom: 1px solid #0C70F2!important;
-    color: #0C70F2!important;
-    background-color: rgba(223, 247, 247, 0.6)!important;
+    font-size: 0.8rem !important;
+    border-bottom: 1px solid #0C70F2 !important;
+    color: #0C70F2 !important;
+    background-color: rgba(223, 247, 247, 0.6) !important;
 }
 
 .span-descricao {
@@ -446,9 +448,9 @@ input:checked + .toggle .star--6 {
 }
 
 .addonDarkMode {
-    background-color: rgba(5, 16, 38, 0.6)!important;
-    color: #DFF7F7!important;
-    border-bottom: 1px solid #DFF7F7!important;
+    background-color: rgba(5, 16, 38, 0.6) !important;
+    color: #DFF7F7 !important;
+    border-bottom: 1px solid #DFF7F7 !important;
 }
 
 .descricao {
@@ -457,10 +459,10 @@ input:checked + .toggle .star--6 {
 }
 
 .inputsDarkMode {
-    background-color: rgba(5, 16, 38, 0.6)!important;
-    border-bottom: 1px solid #DFF7F7!important;
-    border-right: 1px solid #DFF7F7!important;
-    color: #DFF7F7!important;
+    background-color: rgba(5, 16, 38, 0.6) !important;
+    border-bottom: 1px solid #DFF7F7 !important;
+    border-right: 1px solid #DFF7F7 !important;
+    color: #DFF7F7 !important;
 }
 
 .detalhamento {
@@ -479,7 +481,7 @@ input:checked + .toggle .star--6 {
     color: #DFF7F7;
     padding-left: 2vw;
     padding-right: 2vw;
-    margin-left: -1vw!important;
+    margin-left: -1vw !important;
     text-align: center;
     background: linear-gradient(90deg,#0C70F2,#3C6392,#08A63F,#0C70F2);
     background-size: 400%;
@@ -530,20 +532,20 @@ input:checked + .toggle .star--6 {
 }
 
 .accordion-button, .accordion-body {
-    padding-top: 0.5rem!important;
-    padding-bottom: 0.5rem!important;
-    background-color: transparent!important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    background-color: transparent !important;
     color: #051026 !important;
-    border-bottom: 1px solid rgba(60, 99, 146, 0.6)!important;
+    border-bottom: 1px solid rgba(60, 99, 146, 0.6) !important;
 }
 
 .accordion-dark-mode {
-    color: #DFF7F7!important;
+    color: #DFF7F7 !important;
 }
 
 .accordion-button:not(.collapsed) {
-    color: #DFF7F7!important;
-    background-color: #3C6392!important;
+    color: #DFF7F7 !important;
+    background-color: #3C6392 !important;
     border-bottom: none !important;
 }
 
@@ -552,9 +554,9 @@ input:checked + .toggle .star--6 {
 }
 
 .btn-warning {
-    --bs-btn-color: #fff!important;
-    --bs-btn-hover-color: #fff!important;
-    --bs-btn-active-color: #fff!important;
+    --bs-btn-color: #fff !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-active-color: #fff !important;
 }
 
 .toast {
