@@ -56,10 +56,17 @@ function criarRecado(e) {
     e.preventDefault();
     let infoDescricao = inputDescricao.value;
     let infoDetalhamento = inputDetalhamento.value;
+    let dataAtual = new Date();
+    let dia = dataAtual.getDate();
+    let mes = dataAtual.getMonth();
+    let ano = dataAtual.getFullYear();
+    let horas = dataAtual.getHours();
+    let minutos = dataAtual.getMinutes();
     let novoRecado = {
         indice: '',
         descricao: infoDescricao,
-        detalhamento: infoDetalhamento
+        detalhamento: infoDetalhamento,
+        data: `Criado dia ${dia}/${mes}/${ano} às ${horas}:${minutos}`
     };
     listaRecados.push(novoRecado);
     salvarNoStorageHome(listaUsuariosHome);
@@ -80,8 +87,8 @@ function carregarConteudo(listaRecados) {
             divAccordion.innerHTML = `
                                         <h2 class="accordion-header" id="heading${indice}">
                                         <h2 class="accordion-header" id="panelsStayOpen-heading${indice}">
-                                            <button class="accordion-button collapsed botaoAccordion" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse${indice}" aria-expanded="false" aria-controls="panelsStayOpen-collapse${indice}">
-                                                Recado #${Number(indice) + 1}: ${listaRecados[indice].descricao}
+                                            <button class="accordion-button collapsed botaoAccordion d-flex align-items-end" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse${indice}" aria-expanded="false" aria-controls="panelsStayOpen-collapse${indice}">
+                                                Recado #${Number(indice) + 1}<span class="descricaoRecado">: ${listaRecados[indice].descricao}</span><span class="dataRecado ms-2">${listaRecados[indice].data}</span>
                                             </button>
                                         </h2>
                                         <div id="panelsStayOpen-collapse${indice}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading${indice}">
@@ -176,7 +183,7 @@ function toggleTemaHome() {
 }
 ;
 // VERIFICAÇÃO SALVA
-let darkModeHome = localStorage.getItem('DarkMode');
+let darkModeHome = localStorage.getItem('DarkMode') || '';
 if (darkModeHome === 'true') {
     toggleHome.checked = true;
     toggleTemaHome();

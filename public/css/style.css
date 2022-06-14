@@ -549,6 +549,14 @@ input:checked + .toggle .star--6 {
     border-bottom: none !important;
 }
 
+.accordion-button:not(.collapsed) > .dataRecado {
+    display: block;
+}
+
+.accordion-button:not(.collapsed) > .descricaoRecado {
+    display: none;
+}
+
 .accordion-button:focus {
     box-shadow: none !important;
 }
@@ -575,4 +583,10 @@ input:checked + .toggle .star--6 {
 #toastLogOut {
     top: 84% !important;
     left: 84% !important;
+}
+
+.dataRecado {
+    font-size: 0.7rem;
+    font-style: italic;
+    display: none;
 }

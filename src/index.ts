@@ -21,7 +21,8 @@ const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstra
 interface Recados {
     indice :string;
     descricao :string;
-    detalhamento :string
+    detalhamento :string;
+    data: string
 };
 interface Usuario {
     username :string;

@@ -16,7 +16,8 @@ if(loginHome !== 'true'){
 interface Recados {
     indice :string;
     descricao :string;
-    detalhamento :string
+    detalhamento :string;
+    data: string
 };
 interface Usuario {
     username :string;
@@ -41,8 +42,8 @@ function pegarNoStorageHome() :Usuario[] {
 // ------------------------------- LÓGICA DOS RECADOS -------------------------------
 // DECLARAÇÃO DE VARIÁVEIS
 let usuario :string = window.sessionStorage.getItem('usuario') || '';
-let listaUsuariosHome = pegarNoStorageHome();
-let indiceUsuario = listaUsuariosHome.findIndex((elemento) => elemento.username === usuario);
+let listaUsuariosHome :Usuario[] = pegarNoStorageHome();
+let indiceUsuario :number = listaUsuariosHome.findIndex((elemento) => elemento.username === usuario);
 let listaRecados :Recados[] = listaUsuariosHome[indiceUsuario].recados;
 let formRecados = document.querySelector('#formRecados') as HTMLFormElement;
 let accordionRecados = document.querySelector('#accordionExample') as HTMLDivElement;
@@ -68,12 +69,19 @@ function logOut() :void {
 function criarRecado(e: any) :void {
     e.preventDefault();
 
-    let infoDescricao = inputDescricao.value;
-    let infoDetalhamento = inputDetalhamento.value;
+    let infoDescricao :string = inputDescricao.value;
+    let infoDetalhamento :string = inputDetalhamento.value;
+    let dataAtual :Date = new Date();
+    let dia :number = dataAtual.getDate();
+    let mes :number = dataAtual.getMonth();
+    let ano :number = dataAtual.getFullYear();
+    let horas :number = dataAtual.getHours();
+    let minutos :number = dataAtual.getMinutes();
     let novoRecado :Recados = {
         indice:'',
         descricao:infoDescricao,
-        detalhamento:infoDetalhamento
+        detalhamento:infoDetalhamento,
+        data: `Criado dia ${dia}/${mes}/${ano} às ${horas}:${minutos}`
     };
 
     listaRecados.push(novoRecado);
@@ -102,8 +110,8 @@ function carregarConteudo(listaRecados :Recados[]) :void {
             divAccordion.innerHTML = `
                                         <h2 class="accordion-header" id="heading${indice}">
                                         <h2 class="accordion-header" id="panelsStayOpen-heading${indice}">
-                                            <button class="accordion-button collapsed botaoAccordion" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse${indice}" aria-expanded="false" aria-controls="panelsStayOpen-collapse${indice}">
-                                                Recado #${Number(indice) + 1}: ${listaRecados[indice].descricao}
+                                            <button class="accordion-button collapsed botaoAccordion d-flex align-items-end" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse${indice}" aria-expanded="false" aria-controls="panelsStayOpen-collapse${indice}">
+                                                Recado #${Number(indice) + 1}<span class="descricaoRecado">: ${listaRecados[indice].descricao}</span><span class="dataRecado ms-2">${listaRecados[indice].data}</span>
                                             </button>
                                         </h2>
                                         <div id="panelsStayOpen-collapse${indice}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading${indice}">
@@ -149,7 +157,7 @@ function editarRecado(indice :string){
     let botaoSalvar = document.querySelector('#salvar') as HTMLButtonElement;
     botaoSalvar.innerText = 'ATUALIZAR';
     formRecados.removeEventListener('submit', criarRecado);
-    let recadoEditado = listaRecados[Number(indice)];
+    let recadoEditado :Recados = listaRecados[Number(indice)];
     formRecados.addEventListener('submit', function(e :any) :void {
         e.preventDefault();
         recadoEditado.descricao = inputDescricao.value;
@@ -198,7 +206,7 @@ function toggleTemaHome() :void {
 };
 
 // VERIFICAÇÃO SALVA
-let darkModeHome = localStorage.getItem('DarkMode');
+let darkModeHome :string = localStorage.getItem('DarkMode') || '';
 
 if(darkModeHome === 'true') {
     toggleHome.checked = true;
