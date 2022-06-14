@@ -58,10 +58,10 @@ function criarRecado(e) {
     let infoDetalhamento = inputDetalhamento.value;
     let dataAtual = new Date();
     let dia = dataAtual.getDate();
-    let mes = dataAtual.getMonth();
+    let mes = (dataAtual.getMonth() + 1);
     let ano = dataAtual.getFullYear();
     let horas = dataAtual.getHours();
-    let minutos = dataAtual.getMinutes();
+    let minutos = dataAtual.getMinutes().toString().padStart(2, '0');
     let novoRecado = {
         indice: '',
         descricao: infoDescricao,
